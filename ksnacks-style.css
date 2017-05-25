@@ -1,4 +1,31 @@
 * {
   margin: 0px;
-  border: 0px;
+  background-color: #ebe8f7;
+  color: #27127a;
+}
+
+h1 {
+  align: center;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.menu {
+  display: list-item block;
+}
+
+table {
+  /* border: 5px solid #27127a; */
+  border: 1px solid black;
+  border-bottom: 1px solid black;
+  border-collapse: collapse;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #aad2e0;
 }
