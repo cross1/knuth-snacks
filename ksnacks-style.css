@@ -15,13 +15,14 @@ h2 {
   margin: 10px 10px 10px 10px;
 }
 
-p {
+
+#about-paragraph {
   margin: 7px;
   max-width: 750px;
 }
 
 .menu {
-  display: list-item block;
+  display: inline;
 }
 
 table {
@@ -33,6 +34,7 @@ table {
 
 td {
   border: 1px solid purple;
+  padding: 5px 10px 5px 10px;
 }
 
 footer {
@@ -42,4 +44,5 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: #aad2e0;
+
 }
