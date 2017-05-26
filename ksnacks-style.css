@@ -2,6 +2,7 @@
   margin: 0px;
   background-color: #ebe8f7;
   color: #27127a;
+  display: display-box;
 }
 
 h1 {
@@ -15,14 +16,9 @@ h2 {
   margin: 10px 10px 10px 10px;
 }
 
-
 #about-paragraph {
-  margin: 7px;
+  margin: 10px;
   max-width: 750px;
-}
-
-.menu {
-  display: inline;
 }
 
 table {
@@ -30,6 +26,16 @@ table {
   border: 1px solid black;
   border-bottom: 1px solid black;
   border-collapse: collapse;
+  margin: 15px;
+}
+
+img.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  border: 1px solid black;
 }
 
 td {
@@ -45,4 +51,15 @@ footer {
   width: 100%;
   background-color: #aad2e0;
 
+}
+
+nav {
+  margin: 10px;
+  align: center;
+}
+
+a {
+  align: center;
+  padding: 10px;
+  border: 1px solid purple;
 }
