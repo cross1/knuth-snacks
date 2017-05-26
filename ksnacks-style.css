@@ -2,6 +2,7 @@
   margin: 0px;
   background-color: #ebe8f7;
   color: #27127a;
+  display: display-box;
 }
 
 h1 {
@@ -15,13 +16,9 @@ h2 {
   margin: 10px 10px 10px 10px;
 }
 
-p {
-  margin: 7px;
+#about-paragraph {
+  margin: 10px;
   max-width: 750px;
-}
-
-.menu {
-  display: list-item block;
 }
 
 table {
@@ -29,10 +26,21 @@ table {
   border: 1px solid black;
   border-bottom: 1px solid black;
   border-collapse: collapse;
+  margin: 15px;
+}
+
+img.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  border: 1px solid black;
 }
 
 td {
   border: 1px solid purple;
+  padding: 5px 10px 5px 10px;
 }
 
 footer {
@@ -42,4 +50,16 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: #aad2e0;
+
+}
+
+nav {
+  margin: 10px;
+  align: center;
+}
+
+a {
+  align: center;
+  padding: 10px;
+  border: 1px solid purple;
 }
