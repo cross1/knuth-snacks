@@ -8,6 +8,16 @@ h1 {
   align: center;
   text-align: center;
   border: 1px solid black;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin: 10px 10px 10px 10px;
+}
+
+p {
+  margin: 7px;
+  max-width: 750px;
 }
 
 .menu {
@@ -19,6 +29,10 @@ table {
   border: 1px solid black;
   border-bottom: 1px solid black;
   border-collapse: collapse;
+}
+
+td {
+  border: 1px solid purple;
 }
 
 footer {
