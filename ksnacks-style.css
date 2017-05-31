@@ -5,6 +5,11 @@
   display: display-box;
 }
 
+.suggestions {
+  margin: auto;
+  max-width: 70%;
+}
+
 h1 {
   align: center;
   text-align: center;
@@ -26,7 +31,8 @@ table {
   border: 1px solid black;
   border-bottom: 1px solid black;
   border-collapse: collapse;
-  margin: 15px;
+  margin: auto;
+  width: 50%;
 }
 
 img.center {
