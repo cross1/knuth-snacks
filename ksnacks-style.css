@@ -5,6 +5,22 @@
   display: display-box;
 }
 
+form {
+  display: inline-block;
+}
+
+#button {
+  display: inline-block;
+  background-color: #27127a;
+  color: #ebe8f7;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  height: 20px;
+  width: 100px;
+
+}
+
 .suggestions {
   margin: auto;
   max-width: 70%;

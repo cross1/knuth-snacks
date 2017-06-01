@@ -3,6 +3,8 @@
   <head>
     <title>KnuthSnacks|More Snacks, Please</title>
     <link rel='stylesheet' type='text/css' href='ksnacks-style.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type='text/javascript' src='moresnacks.js'></script>
   </head>
   <body>
     <nav>
@@ -12,14 +14,18 @@
       <a href='about.html'>ABOUT</a>
     </nav>
     <h1>Snacks!!!</h1>
-    <div class=suggestions>
+  <div class=suggestions>
     <p>
       Please enter snack requests here. They will be added to the shopping list.
     </p>
     <form>
       Suggestion: <input type='text' name='snack-suggestion'/>
     </form>
+    <div id='button'>SUBMIT</div>
   </div>
-  </body>
+  <h3>Shopping List</h3>
+  <div class='list-of-snacks'>
+
+  </div>
 
 </html>
