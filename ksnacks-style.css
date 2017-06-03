@@ -29,8 +29,8 @@ form {
 h1 {
   align: center;
   text-align: center;
-  border: 1px solid black;
-  margin-bottom: 10px;
+  /*border: 1px solid black;*/
+  margin: 20px;
 }
 
 h2 {
@@ -82,6 +82,7 @@ nav {
 
 a {
   align: center;
-  padding: 10px;
-  border: 1px solid purple;
+  padding: 15px;
+  margin: 20px;
+
 }
