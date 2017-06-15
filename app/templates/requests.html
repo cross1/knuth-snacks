@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Snacks!!!</h1>
+<div class=suggestions>
+  <p>
+    Please enter snack requests here. They will be added to the shopping list.
+  </p>
+  <form>
+    Suggestion: <input type='text' name='snack-suggestion'/>
+  </form>
+  <div id='button'>SUBMIT</div>
+</div>
+<h3>Shopping List</h3>
+<div class='list-of-snacks'>
+
+</div>
+
+{% endblock %}
