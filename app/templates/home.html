@@ -7,41 +7,16 @@
       <th>Location</th>
       <th>Are We Out?</th>
     </tr>
+    {% for snack in snacks %}
     <tr>
-      <td>Tortilla Chips</td>
-      <td>Under microwave</td>
+      <td>{{snack.snackname}}</td>
+      <td>{{snack.location}}</td>
       <td>
-        <button>
+        <button onclick="location.href='{{url_for('outofsnack', snackname=snack.snackname)}}'">
           <h5>Get More</h5>
         </button>
       </td>
     </tr>
-    <tr>
-      <td>Muffins</td>
-      <td>On Counter</td>
-      <td>
-        <button>
-          <h5>Get More</h5>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>Orange Juice</td>
-      <td>In Fridge</td>
-      <td>
-        <button>
-          <h5>Get More</h5>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>Aussie Bites</td>
-      <td>Under Microwave</td>
-      <td>
-        <button>
-          <h5>Get More</h5>
-        </button>
-      </td>
-    </tr>
+    {% endfor %}
   </table>
 {% endblock %}

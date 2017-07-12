@@ -1,20 +1,17 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type='text/javascript' src='{{url_for('static', filename='js/moresnacks.js')}}'></script>
 <h1>Snacks!!!</h1>
 <div class=suggestions>
+  <form method='POST'>
   <p>
-    Please enter snack requests here. They will be added to the shopping list.
+    {{form.hidden_tag()}}
+    {{form.question.label}}
+    <br>
+    Suggestion: {{form.question(size=64)}}
   </p>
-  <form>
-    Suggestion: <input type='text' name='snack-suggestion'/>
+  <input id='button' type='submit' value='SUBMIT'>
   </form>
-  <div id='button'>SUBMIT</div>
 </div>
-<h3>Shopping List</h3>
-<div class='list-of-snacks'>
 
-</div>
 {% endblock %}
