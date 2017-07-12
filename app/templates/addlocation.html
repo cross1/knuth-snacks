@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Please enter the location for {{snack}} <h1>
+<div class=location>
+  <form method='POST'>
+    {{form.hidden_tag()}}
+    {{form.location.label}}
+    {{form.location}}
+
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1>{{ welcome }}</h1>
+  <table>
+    <tr>
+      <th>Snack</th>
+      <th>Location</th>
+      <th>Are We Out?</th>
+    </tr>
+    {% for snack in snacks %}
+    <tr>
+      <td>{{snack.snackname}}</td>
+      <td>{{snack.location}}</td>
+      <td>
+        <button onclick="location.href='{{url_for('outofsnack', snackname=snack.snackname)}}'">
+          <h5>Get More</h5>
+        </button>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

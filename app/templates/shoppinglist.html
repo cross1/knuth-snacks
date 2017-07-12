@@ -1,0 +1,22 @@
+{% extends "layout.html"%}
+{% block content %}
+<h1>See What Others Have Requested</h1>
+  <table>
+  {% for snack in snacks %}
+    <tr>
+      <td>{{snack.snackname}}</td>
+      <td><button onclick="location.href='{{url_for('bump', snackname=snack.snackname)}}'">Bump </button></td>
+      <td>Bumps: {{snack.bumps}}</td>
+      <td>
+        <form method='POST' action={{url_for('restock',snackname=snack.snackname)}}>
+          {{form.hidden_tag()}}
+          {{form.location.label}}
+          {{form.location}}
+          <input id=button type=submit value=Restock>
+        </form>
+      </td>
+    </tr>
+
+  {% endfor %}
+</table>
+{% endblock %}

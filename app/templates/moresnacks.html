@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Snacks!!!</h1>
+<div class=suggestions>
+  <form method='POST'>
+  <p>
+    {{form.hidden_tag()}}
+    {{form.question.label}}
+    <br>
+    Suggestion: {{form.question(size=64)}}
+  </p>
+  <input id='button' type='submit' value='SUBMIT'>
+  </form>
+</div>
+
+{% endblock %}
