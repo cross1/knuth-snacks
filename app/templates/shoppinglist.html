@@ -1,12 +1,29 @@
 {% extends "layout.html"%}
 {% block content %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write(
+  '<script src="{{url_for('static', filename='jquery.js') }}">\x3C/script>')
+</script>
+<script type=text/javascript>
+  {% for snack in snacks %}
+  $(function() {
+    $('#bump').click(function() {
+      $.getJSON('http://localhost:5000{{url_for('bump', snackname=snack.snackname)}}',
+      function(data) {
+        console.log(data);
+        $('#{{snack.snackname}}_bumps').text('Bumps:' + data.bumps);
+      });
+    });
+  });
+  {% endfor %}
+</script>
 <h1>See What Others Have Requested</h1>
   <table>
   {% for snack in snacks %}
     <tr>
       <td>{{snack.snackname}}</td>
-      <td><button onclick="location.href='{{url_for('bump', snackname=snack.snackname)}}'">Bump </button></td>
-      <td>Bumps: {{snack.bumps}}</td>
+      <td><button id= onclick="location.href='{{url_for('bump', snackname=snack.snackname)}}'">Bump </button></td>
+      <td id='{{snack.snackname}}_bumps'>Bumps: {{snack.bumps}}</td>
       <td>
         <form method='POST' action={{url_for('restock',snackname=snack.snackname)}}>
           {{form.hidden_tag()}}
@@ -19,4 +36,5 @@
 
   {% endfor %}
 </table>
+
 {% endblock %}

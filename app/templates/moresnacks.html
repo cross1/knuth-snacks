@@ -3,6 +3,9 @@
 {% block content %}
 <h1>Snacks!!!</h1>
 <div class=suggestions>
+  {% if message %}
+  <p>{{message}}<p>
+  {% endif %}
   <form method='POST'>
   <p>
     {{form.hidden_tag()}}

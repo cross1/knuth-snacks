@@ -1,7 +1,13 @@
-from flask import render_template
+from flask import render_template, jsonify
 from app import app, db
 from .forms import AddSnackForm, AddALocation
 from .models import Snacks
+
+def delete_snacks():
+    snacks = Snacks.query.all()
+    for snack in snacks:
+        db.session.delete(snack)
+    db.session.commit()
 
 @app.route('/')
 def home():
@@ -18,15 +24,19 @@ def outofsnack(snackname):
 @app.route('/moresnacks', methods=['GET', 'POST'])
 def moresnacks():
     myform = AddSnackForm()
+    message = ""
     #add stuff to database
     if myform.validate_on_submit():
         newsnack_name = myform.question.data
-        newsnack = Snacks(newsnack_name)
-        db.session.add(newsnack)
-        db.session.commit()
-        myform.question.data=""
+        duplicates = Snacks.query.filter_by(snackname=newsnack_name).all()
+        if not duplicates:
+            newsnack = Snacks(newsnack_name)
+            db.session.add(newsnack)
+            db.session.commit()
+            myform.question.data=""
+            message = "Cannot duplicate snack"
 
-    return render_template('moresnacks.html', form=myform)
+    return render_template('moresnacks.html', form=myform, message=message)
 
 @app.route('/shoppinglist')
 def shoppinglist():
@@ -70,7 +80,7 @@ def bump(snackname):
     snack = Snacks.query.filter_by(snackname=snackname).first()
     snack.bumps+=1
     db.session.commit()
-    return shoppinglist()
+    return jsonify({'bumps': snack.bumps})
 
 @app.route('/about')
 def about():
