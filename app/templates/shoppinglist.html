@@ -7,11 +7,11 @@
 <script type=text/javascript>
   {% for snack in snacks %}
   $(function() {
-    $('#bump').click(function() {
+    $('#bump_{{snack.snackname}}').click(function() {
       $.getJSON('http://localhost:5000{{url_for('bump', snackname=snack.snackname)}}',
       function(data) {
         console.log(data);
-        $('#{{snack.snackname}}_bumps').text('Bumps:' + data.bumps);
+        $('#{{snack.snackname}}_bumps').text('Bumps: ' + data.bumps);
       });
     });
   });
@@ -22,7 +22,7 @@
   {% for snack in snacks %}
     <tr>
       <td>{{snack.snackname}}</td>
-      <td><button id= onclick="location.href='{{url_for('bump', snackname=snack.snackname)}}'">Bump </button></td>
+      <td><button id='bump_{{snack.snackname}}' >Bump </button></td>
       <td id='{{snack.snackname}}_bumps'>Bumps: {{snack.bumps}}</td>
       <td>
         <form method='POST' action={{url_for('restock',snackname=snack.snackname)}}>
