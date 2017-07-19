@@ -12,7 +12,7 @@ def delete_snacks():
 @app.route('/')
 def home():
     snacks_to_disp = Snacks.query.filter_by(out=False).all()
-    return render_template('home.html', welcome='Welcome to KnuthSnacks!', snacks=snacks_to_disp)
+    return render_template('home.html', welcome='Welcome to SnackOverflow!', snacks=snacks_to_disp)
 
 @app.route('/wereout/<snackname>')
 def outofsnack(snackname):
