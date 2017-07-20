@@ -2,6 +2,7 @@ from flask import render_template, jsonify
 from app import app, db
 from .forms import AddSnackForm, AddALocation
 from .models import Snacks
+from resources import deslugify
 
 def delete_snacks():
     snacks = Snacks.query.all()
@@ -16,6 +17,7 @@ def home():
 
 @app.route('/wereout/<snackname>')
 def outofsnack(snackname):
+    snackname = deslugify(snackname)
     snack=Snacks.query.filter_by(snackname=snackname).first()
     snack.out=True
     db.session.commit()
@@ -27,7 +29,7 @@ def moresnacks():
     message = ""
     #add stuff to database
     if myform.validate_on_submit():
-        newsnack_name = myform.question.data
+        newsnack_name = myform.question.data.lower()
         duplicates = Snacks.query.filter_by(snackname=newsnack_name).all()
         if not duplicates:
             newsnack = Snacks(newsnack_name)
@@ -47,6 +49,7 @@ def shoppinglist():
 
 @app.route('/restock/<snackname>', methods=['GET', 'POST'])
 def restock(snackname):
+    snackname = deslugify(snackname)
     snack = Snacks.query.filter_by(snackname=snackname).first()
     locationform = AddALocation()
 
@@ -64,6 +67,7 @@ def restock(snackname):
 
 @app.route('/addlocation/<snackname>', methods=['GET', 'POST'])
 def addlocation(snackname):
+    snackname = deslugify(snackname)
     snack = Snacks.query.filter_by(snackname=snackname).first()
     locationform = AddALocation()
 
@@ -78,6 +82,7 @@ def addlocation(snackname):
 
 @app.route('/bump/<snackname>')
 def bump(snackname):
+    snackname = deslugify(snackname)
     snack = Snacks.query.filter_by(snackname=snackname).first()
     snack.bumps+=1
     db.session.commit()

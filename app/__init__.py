@@ -11,4 +11,13 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+from resources import slugify
+
 from . import routes, models
+
+# Use this for handling snack urls
+@app.context_processor
+def utility_processor():
+    def slugify_filter(s):
+        return slugify(s, delim=u'-')
+    return dict(slugify=slugify_filter)

@@ -12,7 +12,7 @@
       <td>{{snack.snackname}}</td>
       <td>{{snack.location}}</td>
       <td>
-        <button onclick="location.href='{{url_for('outofsnack', snackname=snack.snackname)}}'">
+        <button onclick="location.href='{{url_for('outofsnack', snackname=slugify(snack.snackname))}}'">
           <h5>Get More</h5>
         </button>
       </td>
