@@ -34,6 +34,7 @@ def moresnacks():
             db.session.add(newsnack)
             db.session.commit()
             myform.question.data=""
+        else:
             message = "Cannot duplicate snack"
 
     return render_template('moresnacks.html', form=myform, message=message)
