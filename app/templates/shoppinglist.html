@@ -10,7 +10,6 @@
     $('#bump_{{snack.snackname}}').click(function() {
       $.getJSON('http://localhost:5000{{url_for('bump', snackname=snack.snackname)}}',
       function(data) {
-        console.log(data);
         $('#{{snack.snackname}}_bumps').text('Bumps: ' + data.bumps);
       });
     });
