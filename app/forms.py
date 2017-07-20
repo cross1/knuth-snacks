@@ -2,10 +2,12 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField
 from wtforms.validators import DataRequired
 
-CHOICES=[('infridge', 'In Fridge'),
-         ('undermircowave', 'Under Microwave'),
-         ('abovemicrowave', 'Above Microwave'),
-         ('other', 'Other')]
+CHOICES=[('In Fridge', 'In Fridge'),
+         ('Under Microwave', 'Under Microwave'),
+         ('Above Microwave', 'Above Microwave'),
+	 ('On Table', 'On Table'),
+	 ('In Freezer', 'In Freezer'),
+         ('Other', 'Other')]
 
 class AddSnackForm(FlaskForm):
     question = StringField('''Please enter snack requests here. They will be added
